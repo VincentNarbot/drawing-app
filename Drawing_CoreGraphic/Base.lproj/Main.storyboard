@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Drawing_CoreGraphic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GF0-Iw-RCU" customClass="DrawView" customModule="Drawing_CoreGraphic" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAP-iQ-fcd">
+                                <rect key="frame" x="547" y="20" width="37" height="30"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="H6r-nx-rAU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZAP-iQ-fcd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3fN-lo-YGA"/>
+                            <constraint firstItem="ZAP-iQ-fcd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="NR8-k8-rIE"/>
+                            <constraint firstItem="GF0-Iw-RCU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Ob3-eq-Tc0"/>
+                            <constraint firstItem="ZAP-iQ-fcd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="cPX-Mk-y1G"/>
+                            <constraint firstItem="GF0-Iw-RCU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="khf-9h-i6q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZAP-iQ-fcd" secondAttribute="trailing" id="m2D-sg-ZjH"/>
+                            <constraint firstItem="ZAP-iQ-fcd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="265" id="oug-ZM-p0Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GF0-Iw-RCU" secondAttribute="trailing" constant="-16" id="uyK-Y4-t6D"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GF0-Iw-RCU" secondAttribute="bottom" id="ylh-tm-j9Z"/>
+                            <constraint firstItem="GF0-Iw-RCU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yn9-4H-HGX"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="yn9-4H-HGX"/>
+                                <exclude reference="3fN-lo-YGA"/>
+                                <exclude reference="oug-ZM-p0Y"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="DrawView" destination="GF0-Iw-RCU" id="Jys-oH-Ga9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
