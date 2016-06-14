@@ -13,22 +13,22 @@ class DrawView: UIView {
     var lines: [Line] = []
     var startPoint: CGPoint!
     
-    required init(coder aDecoder: NSCoder){
+    required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
         self.backgroundColor = UIColor.blackColor()
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let var touch = touches.first as? UITouch {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
             startPoint = touch.locationInView(self)
         }
         
         super.touchesBegan(touches , withEvent:event)
     }
     
-    override func touchesMoved(touches: Set<NSObject>, withEvent event: UIEvent) {
-        if let var touch = touches.first as? UITouch {
-            var endPoint = touch.locationInView(self)
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch = touches.first {
+            let endPoint = touch.locationInView(self)
             lines.append(Line(start: startPoint, end: endPoint))
             startPoint = endPoint
         }
@@ -37,13 +37,13 @@ class DrawView: UIView {
     }
     
     override func drawRect(rect: CGRect) {
-        var context = UIGraphicsGetCurrentContext()
+        let context = UIGraphicsGetCurrentContext()
         CGContextBeginPath(context)
         for line in lines {
             CGContextMoveToPoint(context, line.start.x, line.start.y)
             CGContextAddLineToPoint(context, line.end.x, line.end.y)
         }
-        CGContextSetLineCap(context, kCGLineCapRound)
+        CGContextSetLineCap(context, CGLineCap.Round)
         CGContextSetRGBStrokeColor(context, 1, 1, 1, 1)
         CGContextSetLineWidth(context, 5)
         CGContextStrokePath(context)
