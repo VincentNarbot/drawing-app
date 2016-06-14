@@ -124,6 +124,8 @@
 		C75223471B5ED0C0007AB410 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Vincent Narbot";
 				TargetAttributes = {
@@ -319,6 +321,7 @@
 				C75223701B5ED0C0007AB410 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -25,8 +25,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clearTapped(){
-        println("Clear")
-        var mDrawView = drawView
+        print("Clear")
+        let mDrawView = drawView
         mDrawView.lines = []
         mDrawView.setNeedsDisplay()
     }
